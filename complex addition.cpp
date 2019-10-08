@@ -1,39 +1,34 @@
-#include <iostream>
+#include <iostream> 
+
 using namespace std;
 
-typedef struct complex
+class complex_number
 {
-    float real;
-    float imag;
-} complexNumber;
-
-complexNumber addComplexNumbers(complex, complex);
+   public :
+      int real, imag;
+};
 
 int main()
 {
-    complexNumber n1, n2, temporaryNumber;
-    char signOfImag;
+   complex_number num1, num2, sum;
 
-    cout << "For 1st complex number," << endl;
-    cout << "Enter real and imaginary parts respectively:" << endl;
-    cin >> n1.real >> n1.imag;
+   //getting the value of first complex number from user
+   cout << "Enter real and imaginary parts of first complex number:"<<endl; 
+   cin >> num1.real >> num1.imag;
 
-    cout << endl << "For 2nd complex number," << endl;
-    cout << "Enter real and imaginary parts respectively:" << endl;
-    cin >> n2.real >> n2.imag;
+   //getting the value of second complex number from user
+   cout << "Enter real and imaginary parts of second complex number:"<<endl; 
+   cin >> num2.real >> num2.imag;
 
-    signOfImag = (temporaryNumber.imag > 0) ? '+' : '-';
-    temporaryNumber.imag = (temporaryNumber.imag > 0) ? temporaryNumber.imag : -temporaryNumber.imag; 
+   //addition of real and imaginary parts of complex numbers entered by user
+   sum.real = num1.real + num2.real;
+   sum.imag = num1.imag + num2.imag;
 
-    temporaryNumber = addComplexNumbers(n1, n2);    
-    cout << "Sum = "  << temporaryNumber.real << temporaryNumber.imag << "i";
-    return 0;
-}
+   //displaying the sum of complex numbers
+   if ( sum.imag >= 0 )
+      cout << "Sum of two complex numbers = " << sum.real << " + " << sum.imag << "i";
+   else
+      cout << "Sum of two complex numbers = " << sum.real << " - " << sum.imag << "i";
 
-complexNumber addComplexNumbers(complex n1,complex n2)
-{
-      complex temp;
-      temp.real = n1.real+n2.real;
-      temp.imag = n1.imag+n2.imag;
-      return(temp);
+   return 0;
 }
