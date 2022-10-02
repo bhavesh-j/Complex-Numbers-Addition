@@ -15,7 +15,7 @@ int main()
     char signOfImag;
 
     cout << "For 1st complex number," << endl;
-    cout << "Enter real and imaginary parts respectively:" << endl;
+    cout << "Enter real and imaginary part respectively:" << endl;
     cin >> n1.real >> n1.imag;
 
     cout << endl << "For 2nd complex number," << endl;
